@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>service</title>
+    <style>
+
+
+ 
+
+body {
+  background: linear-gradient(270deg, #000916, #0a284e, #000916);
+  background-size: 600% 600%;
+  animation: gradientMove 8s ease infinite;
+   font-family: 'Poppins', sans-serif;
+
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+section{
+  margin-bottom: 100px ;
+}
+
+.service{
+    justify-items: center;
+}
+
+h1 {
+    color: white;
+    justify-content: center;
+      font-size: 30px;
+      font-weight: 600;
+      margin: 2rem;
+      line-height: 1.1;
+      color: white;
+      text-shadow: 0 0 10px rgba(128, 128, 128, 0.418);
+}
+
+
+
+/* Container */
+.cards {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  padding: 80px 20px;
+  flex-wrap: wrap;
+}
+
+/* Carte */
+.card {
+  position: relative;
+  width: 280px;
+  height: 280px;
+  padding: 25px;
+  border-radius: 20px;
+  color: white;
+  overflow: hidden;
+  cursor: pointer;
+
+  backdrop-filter: blur(10px);
+  transition: 0.4s ease;
+
+  animation: float 4s ease-in-out infinite;
+}
+
+/* Effet glow au hover */
+.card::before {
+  content: "";
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  top: -50%;
+  left: -50%;
+  background: radial-gradient(circle, rgba(255,255,255,0.3), transparent);
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.card:hover::before {
+  opacity: 1;
+}
+
+/* Hover effect */
+.card:hover {
+  transform: translateY(-15px) scale(1.05);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+}
+
+/* Anim flotte */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+/* Couleurs modernes */
+.blue {
+ background: transparent;
+  border: 1px solid rgba(8, 99, 245, 0.918);
+}
+
+.pink {
+  background: transparent;
+  border: 1px solid rgba(8, 99, 245, 0.918);
+  animation-delay: 1s;
+}
+
+.cyan {
+  background: transparent;
+  border: 1px solid rgba(8, 99, 245, 0.918);
+  animation-delay: 2s;
+}
+
+.card img{
+  width: 60px;
+  height: auto;
+  align-items: center;
+}
+/* Texte */
+.card h3 {
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.card p {
+  font-size: 14px;
+  opacity: 0.8;
+}
+.link {
+  position: absolute;
+  bottom: 20px;
+  font-size: 13px;
+  text-decoration: none;
+  color: white;
+  opacity: 0.7;
+}
+
+.about-section {
+  background: #000916c7;
+  color: white;
+  padding: 100px 20px;
+  text-align: center;
+}
+
+.about-container {
+  max-width: 700px;
+  margin: auto;
+}
+
+/* TITRE */
+.about-container h2 {
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+
+/* TEXTE */
+.about-container p {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 15px;
+  color: #ccc;
+}
+
+/* MOT NOVAWEB */
+.about-container span {
+  color: #3b82f6;
+  font-weight: bold;
+}
+
+/* PHRASE IMPORTANTE */
+.highlight {
+  color: white;
+  font-weight: bold;
+}
+
+/* ANIMATION (au début caché) */
+.reveal {
+  opacity: 0;
+  transform: translateY(60px);
+  transition: all 1s ease;
+}
+
+/* Quand visible */
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* petit curseur style écriture */
+#typing-text::after {
+  content: "|";
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%,100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.contact-section{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 80vh;
+  padding: 50px;
+ 
+}
+
+.robot{
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+}
+
+
+.contact-form {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 100px 20px;
+  background: radial-gradient(circle at top, #0f172a85, #02061780);
+  color: white;
+  text-align: right;
+}
+
+.contact h2 {
+  color: white;
+  font-size: 40px;
+  margin-bottom: 50px;
+}
+
+
+/* container */
+.contact-form {
+  position: relative;
+  max-width: 500px;
+  margin-left: auto;
+  padding: 40px;
+  border-radius: 20px;
+  
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255,255,255,0.1);
+
+  box-shadow: 0 0 40px rgba(59,130,246,0.2);
+  transform: translateY(30px);
+}
+
+
+
+/* inputs */
+.input-group {
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.input-group input,
+.input-group textarea {
+  width: 92%;
+  padding: 10px 5px;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(255,255,255,0.3);
+  outline: none;
+ color:white;
+  font-size: 16px;
+}
+
+/* label animé */
+.input-group label {
+  position: absolute;
+  left: 30px;
+  top: 10px;
+  font-size: 16px;
+  opacity: 0.6;
+  transition: 0.3s;
+  color:white;
+}
+
+.input-group input:focus ~ label,
+.input-group input:valid ~ label,
+.input-group textarea:focus ~ label,
+.input-group textarea:valid ~ label {
+  top: -10px;
+  font-size: 12px;
+  color: #3b82f6;
+}
+
+/* textarea */
+textarea {
+  resize: none;
+  height: 80px;
+}
+
+/* bouton futuriste */
+button {
+  width: 25%;
+  padding: 12px;
+  border: none;
+  border-radius: 30px;
+  background: linear-gradient(135deg, #3b82f6, #89bffd);
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: 0.4s;
+}
+
+/* effet lumière */
+button::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: -100%;
+  background: linear-gradient(120deg, transparent, rgba(255,255,255,0.6), transparent);
+  transition: 0.5s;
+}
+
+button:hover::before {
+  left: 100%;
+}
+
+button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 30px rgba(111, 245, 255, 0.5);
+}
+
+/* Réseaux sociaux */
+.social-icons{
+  display: flex;
+  
+  gap: 20px;
+ 
+}
+
+.social-icons img{
+  width: 30px;
+  height: 30px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.social-icons img:hover{
+  transform: translateY(-5px) scale(1.2);
+  filter: drop-shadow(0 0 10px #fff);
+}
+
+.footer {
+  text-align: center;
+  padding: 5px;
+  background: #0f172a; /* bleu sombre moderne */
+  color: white;
+  font-size: 14px;
+  letter-spacing: 1px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+@media (max-width: 768px) {
+  .contact-section{
+    flex-direction: column;
+  }
+  .contact-form{
+    margin-top: 30px;
+    width: 90%;
+  }
+}
+
+    </style>
+</head>
+<body>
+
+    <div class="service">
+     <h1>Nos services</h1>
+
+     <a href="index1.html"> < </a>
+    </div>
+
+<section class="cards">
+  <div class="card blue">
+    <img src="site.png" alt="icon">
+    <h3>Site vitrine</h3>
+    <p>Présentez votre activité avec un site moderne.</p>
+     <a href="sitevitrine.html" class="link">En savoir plus →</a>
+  </div>
+
+  <div class="card pink">
+    <img src="laptop.png" alt="icon">
+    <h3>Site e-commerce</h3>
+    <p>Vendez vos produits en ligne facilement.</p>
+     <a href="site e commerce.html" class="link">En savoir plus →</a>
+  </div>
+
+  <div class="card cyan">
+    <img src="systeme-de-gestion-de-contenu.png" alt="icon">
+    <h3>Maintenance & gestion de site</h3>
+    <p>Nous assurons la gestion complète de votre site pour garantir sa performance, sa sécurité et sa mise à jour régulière.</p>
+    <a href="maintenance et gestion.html" class="link">En savoir plus →</a>
+  </div>
+</section>
+
+ <section class="about-section">
+  <div class="about-container reveal">
+    <h2 id="apropos">À propos de Nova</h2>
+    <p>
+      Chez <span>Nova</span>, nous ne créons pas simplement des sites web —
+      nous construisons des expériences digitales qui marquent les esprits.
+    </p>
+
+    <p>
+      Notre mission est d’aider les entreprises à se démarquer avec des sites
+      modernes, rapides et pensés pour convertir.
+    </p>
+
+    <p class="highlight">
+      Les résultats parlent plus que les promesses.
+    </p>
+  </div>
+</section>
+ <div>
+  <h1 id="contact">contactez-nous</h1>
+ </div>
+<section class="contact-section">
+
+  
+
+ <div class="robot">
+<dotlottie-wc src="https://lottie.host/813c775e-06c1-4576-b4f4-b0c1fb37ed24/67q1xxNbOV.lottie" style="width: 300px;height: 300px" autoplay loop></dotlottie-wc>
+ </div>
+<form class="contact-form" id="contact-form">
+
+  <div class="input-group">
+    <input type="text" name="name" required>
+    <label>Nom complet</label>
+  </div>
+
+  <div class="input-group">
+    <input type="email" name="email" required>
+    <label>Email</label>
+  </div>
+
+  <div class="input-group">
+    <textarea name="message" required></textarea>
+    <label>Votre message</label>
+  </div>
+
+  <button type="submit">Envoyer </button>
+</form>
+
+
+
+</section>
+
+<div class="social-icons">
+    <a href="https://www.facebook.com/share/1Cfsy15fyS/"><img src="facebook.png" alt="Facebook"></a>
+    <a href="https://www.instagram.com/nova__web.26?igsh=MW1hNm92NTdnMjUwOQ=="><img src="instagram.png" alt="Instagram"></a>
+    <a href="https://www.linkedin.com/in/nova-undefined-99b6123ba?utm_source=share_via&utm_content=profile&utm_medium=member_android"><img src="linkedin.png" alt="linkedin"></a>
+  
+  </div>
+
+<footer class="footer">
+  <p>© 2026 NovaWeb. Tous droits réservés.</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+<script>
+(function(){
+  emailjs.init("8kNkwJt19i-IqytyU"); // remplace ici
+})();
+
+document.getElementById("contact-form")
+.addEventListener("submit", function(e) {
+  e.preventDefault();
+
+ emailjs.sendForm('service_79tuffh', 'template_cunp06h', this)
+  .then(() => {
+    alert("Message envoyé ✅");
+  }, (error) => {
+    console.log("ERREUR :", error); // 👈 TRÈS IMPORTANT
+    alert("Erreur : " + error.text); // 👈 affiche vraie erreur
+  });
+});
+</script>
+
+<script>
+  function revealOnScroll() {
+    const reveals = document.querySelectorAll(".reveal");
+
+    reveals.forEach((element) => {
+      const windowHeight = window.innerHeight;
+      const elementTop = element.getBoundingClientRect().top;
+
+      if (elementTop < windowHeight - 100) {
+        element.classList.add("active");
+      }
+    });
+  }
+
+  window.addEventListener("scroll", revealOnScroll);
+</script>
+
+<script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.9.3/dist/dotlottie-wc.js" type="module"></script>
+
+</body>
+</html>
